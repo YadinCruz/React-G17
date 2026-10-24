@@ -1,22 +1,59 @@
-import Footer from "./components/Footer"
-import Header from "./components/Header"
-import ProductCard from "./components/ProductCard"
-import { productos } from "./datos"
-
-
+import { useState, useEffect } from "react"
+import type {EstadoCarga, Producto} from "./dominio/tipos"
+import { obtenerProductos } from "./infraestructura/api"
+import Detalle from './ui/pages/Detalle';
+import { Route, Routes } from "react-router-dom"
+import { Home } from "./ui/pages/Home";
+import Layout from "./ui/layout/Layout"
+import NoEncontrada from "./ui/pages/NoEncontrada"
+import Checkout from "./ui/pages/Checkout"
 
 export default function App() {
+
+  const [productos, setProductos] = useState<Producto[]>([]);
+  const [estado, setEstado] = useState<EstadoCarga>('cargando');
+  const [esRespaldo, setEsRespaldo] = useState(false);
+  const [intento, setIntento] = useState(0);
+  useEffect(() => {
+    const controlador = new AbortController();
+    async function cargar () {
+      try {
+        const resultado = await obtenerProductos();
+        setProductos(resultado.productos);
+        setEsRespaldo(resultado.esRespaldo);
+        setEstado('listo');
+      } catch (error) {
+        if(error instanceof DOMException && error.name === 'AbortError') return;
+        console.warn('Fallo imprevisto al cargar');
+        setEstado('error');
+      }
+    }
+    cargar();
+    return () => controlador.abort();
+  },[intento])
+  
   return (
-    <main className="mx-auto max-w-5xl p-6">
-      <Header nombre="TecCart" eslogan="Una Vida Tecnologica"/>
-      <Header nombre="FalabellaProductos"/>
-      {/* PROPS */}
-      <section>
-        {
-          productos.map((p) => <ProductCard producto={p} key={p.id}/>)
+    <Routes>
+      <Route element = {
+        <Layout/>
+      }>
+        <Route path="/" element = {
+          <Home esRespaldo={esRespaldo} OnReintentar={() => {setIntento(intento + 1); setEstado('cargando')}}
+          productos={productos} estado={estado}/>
         }
-      </section>
-      <Footer/>
-    </main>
+        />
+        <Route  path="/producto/:id" element = {
+          <Detalle productos={productos}/>
+        }
+        />
+        <Route  path="/checkout" element = {
+            <Checkout/>
+          }
+        />
+      </Route>
+      <Route path="*" element ={
+          <NoEncontrada/>
+      }/>
+    </Routes>
   )
 }
