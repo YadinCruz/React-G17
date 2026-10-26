@@ -4,4 +4,6 @@ export const productos: Producto[] = [
   { id: 1, nombre: 'Audífonos inalámbricos2', marca: 'TechSound', precio: 249.9, imagen: 'https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/1.png', stock: 12, categoria : 'audio' },
   { id: 2, nombre: 'Laptop ultradelgada 14"', marca: 'Nova', precio: 3499, imagen: 'https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/1.png', stock: 0, categoria: 'laptops' },
   { id: 3, nombre: 'Reloj inteligente', marca: 'Clik', precio: 499.9, imagen: 'https://cdn.dummyjson.com/products/images/mens-watches/Brown%20Leather%20Belt%20Watch/1.png', stock: 3, categoria : 'relojes' },
+  { id: 4, nombre: 'Teclado mecánico RGB', marca: 'GamePro', precio: 189.9, imagen: 'https://cdn.dummyjson.com/products/images/keyboard/1.png', stock: 8, categoria: 'audio' },
+  { id: 5, nombre: 'Tablet de 11 pulgadas', marca: 'Nova', precio: 1299.9, imagen: 'https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021/1.png', stock: 6, categoria: 'tablets' },
 ];
