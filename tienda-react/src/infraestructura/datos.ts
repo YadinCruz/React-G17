@@ -1,9 +1,12 @@
 import type { Producto } from "../dominio/tipos";
 
 export const productos: Producto[] = [
-  { id: 1, nombre: 'Audífonos inalámbricos2', marca: 'TechSound', precio: 249.9, imagen: 'https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/1.png', stock: 12, categoria : 'audio' },
-  { id: 2, nombre: 'Laptop ultradelgada 14"', marca: 'Nova', precio: 3499, imagen: 'https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/1.png', stock: 0, categoria: 'laptops' },
-  { id: 3, nombre: 'Reloj inteligente', marca: 'Clik', precio: 499.9, imagen: 'https://cdn.dummyjson.com/products/images/mens-watches/Brown%20Leather%20Belt%20Watch/1.png', stock: 3, categoria : 'relojes' },
-  { id: 4, nombre: 'Teclado mecánico RGB', marca: 'GamePro', precio: 189.9, imagen: 'https://cdn.dummyjson.com/products/images/keyboard/1.png', stock: 8, categoria: 'audio' },
-  { id: 5, nombre: 'Tablet de 11 pulgadas', marca: 'Nova', precio: 1299.9, imagen: 'https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021/1.png', stock: 6, categoria: 'tablets' },
+{ id: 1, nombre: 'Audífonos inalámbricos2', marca: 'TechSound', precio: 249.9, imagen: 'https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp', stock: 12, categoria: 'audio', descripcion: 'Audífonos inalámbricos con sonido nítido y batería de larga duración.' },
+{ id: 2, nombre: 'Laptop ultradelgada 14"', marca: 'Nova', precio: 3499, imagen: 'https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-duo-screen-laptop/thumbnail.webp', stock: 0, categoria: 'laptops', descripcion: 'Laptop ultradelgada de 14 pulgadas, ideal para estudiar, trabajar y realizar múltiples tareas.' },
+{ id: 3, nombre: 'Reloj inteligente', marca: 'Clik', precio: 499.9, imagen: 'https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/thumbnail.webp', stock: 3, categoria: 'relojes', descripcion: 'Reloj inteligente para consultar notificaciones y controlar tu actividad diaria.' },
+{ id: 4, nombre: 'Teclado mecánico RGB', marca: 'GamePro', precio: 189.9, imagen: 'https://cdn.dummyjson.com/product-images/laptops/macbook-pro/thumbnail.webp', stock: 8, categoria: 'accesorios', descripcion: 'Teclado mecánico con iluminación RGB, ideal para videojuegos y escritura.' },
+{ id: 5, nombre: 'Tablet de 11 pulgadas', marca: 'Nova', precio: 1299.9, imagen: 'https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021/thumbnail.webp', stock: 6, categoria: 'tablets', descripcion: 'Tablet portátil para estudiar, navegar por internet y disfrutar contenido multimedia.' },
+{ id: 6, nombre: 'Mouse gamer RGB', marca: 'GamePro', precio: 89.9, imagen: 'URL_DE_IMAGEN', stock: 15, categoria: 'accesorios', descripcion: 'Mouse gamer con iluminación RGB y diseño ergonómico para sesiones de juego.' },
+{ id: 7, nombre: 'Smartphone Nova X', marca: 'Nova', precio: 1899.9, imagen: 'URL_DE_IMAGEN', stock: 7, categoria: 'celulares', descripcion: 'Smartphone moderno para comunicarte, tomar fotografías y utilizar tus aplicaciones favoritas.' },
+{ id: 8, nombre: 'Auriculares gaming', marca: 'TechSound', precio: 159.9, imagen: 'URL_DE_IMAGEN', stock: 10, categoria: 'audio', descripcion: 'Auriculares diseñados para disfrutar videojuegos con audio envolvente y mayor comodidad.' },
 ];
