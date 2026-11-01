@@ -1,6 +1,9 @@
 import type { Producto } from "../dominio/tipos";
 import { productos as respaldo } from "./datos";
 const BASE = 'https://dummyjson.com';
+// const CATEGORY=[
+//         'smartphones','laptops','tablets','mobile-accessories'
+// ];
 
 interface ProductoAPI {
     id : number;
@@ -27,7 +30,7 @@ function mapearProducto (crudo : ProductoAPI) : Producto {
 }
 
 export async function obtenerProductos(): Promise <{ productos : Producto[] ; esRespaldo: boolean}> {
-    try {
+    try {   
         const r = await fetch(`${BASE}/products?limit=24`);
         if(!r.ok) throw new Error (`HTTP ${r.status}`);
         const data = (await r.json()) as { products : ProductoAPI[]};
